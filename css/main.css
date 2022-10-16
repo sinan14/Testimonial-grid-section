@@ -1,0 +1,235 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: #ecf2f8;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.u-flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.container {
+  width: 50%;
+  margin: 48px auto;
+}
+@media only screen and (max-width: 75em) {
+  .container {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .container {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.container {
+  margin: 12.8rem auto 4.8rem;
+  width: 62%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow-x: hidden;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 40px;
+  align-content: start;
+}
+@media only screen and (max-width: 37.5em) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 0rem;
+    gap: 2rem;
+    grid-column: 1/-1 !important;
+    width: 90%;
+    margin: 3.2rem auto;
+  }
+}
+
+.post {
+  border-radius: 0.8rem;
+  padding: 3.2rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.post .author__details {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  line-height: 1.45;
+}
+.post .author__details .author__img {
+  width: 3.6rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.post .primary__testimonial-desc {
+  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  font-size: 19px;
+}
+.post .secondary__testimonial-desc {
+  color: #cfcfcf;
+  font-size: 1.25rem;
+}
+
+.post-1 {
+  background: #7541c8 url("../images/bg-pattern-quotation.svg") no-repeat 83% 0;
+  color: #ffffff;
+  grid-column: 1/3;
+}
+.post-1 .author__name {
+  color: #ecf2f8;
+}
+.post-1 .author__tag {
+  color: #cfcfcf;
+}
+.post-1 .primary__testimonial-desc {
+  color: #ffffff;
+}
+.post-1 .secondary__testimonial-desc {
+  color: #cfcfcf;
+}
+@media only screen and (max-width: 37.5em) {
+  .post-1 {
+    grid-column: 1/-1;
+    grid-row: span 1/2;
+    background-position: 93% 0;
+  }
+}
+
+.post-2 {
+  background-color: #48556a;
+  color: #ffffff;
+}
+.post-2 .author__name {
+  color: #ecf2f8;
+}
+.post-2 .author__tag {
+  color: #cfcfcf;
+}
+.post-2 .primary__testimonial-desc {
+  color: #ffffff;
+}
+.post-2 .secondary__testimonial-desc {
+  color: #cfcfcf;
+}
+@media only screen and (max-width: 37.5em) {
+  .post-2 {
+    grid-row: 2/3;
+    grid-column: 1/-1;
+  }
+}
+
+.post-3,
+.post-5 {
+  background-color: #ffffff;
+}
+.post-3 .author__name,
+.post-5 .author__name {
+  color: #48556a;
+}
+.post-3 .author__tag,
+.post-5 .author__tag {
+  color: #cfcfcf;
+}
+.post-3 .primary__testimonial-desc,
+.post-5 .primary__testimonial-desc {
+  color: #48556a;
+}
+.post-3 .secondary__testimonial-desc,
+.post-5 .secondary__testimonial-desc {
+  color: #cfcfcf;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .post-3 {
+    grid-row: 3/4;
+    grid-column: 1/-1;
+  }
+}
+
+.post-4 {
+  background-color: #19212e;
+  color: #ffffff;
+  grid-column: 2/4;
+  grid-row: 2/3;
+}
+.post-4 .author__name {
+  color: #ecf2f8;
+}
+.post-4 .author__tag {
+  color: #cfcfcf;
+}
+.post-4 .primary__testimonial-desc {
+  color: #ffffff;
+}
+.post-4 .secondary__testimonial-desc {
+  color: #cfcfcf;
+}
+@media only screen and (max-width: 37.5em) {
+  .post-4 {
+    grid-row: 4/5;
+    grid-column: 1/-1;
+  }
+}
+
+.post-5 {
+  grid-column: 4/5;
+  grid-row: 1/3;
+}
+@media only screen and (max-width: 37.5em) {
+  .post-5 {
+    grid-row: 5/6;
+    grid-column: 1/-1;
+  }
+}/*# sourceMappingURL=main.css.map */
